@@ -3,10 +3,12 @@ package com.rent.rentacar.services;
 import com.rent.rentacar.models.User;
 import com.rent.rentacar.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 @RequiredArgsConstructor
 public class UserService {
 
@@ -34,5 +36,9 @@ public class UserService {
             user.setPhone_number(userDetails.getPhone_number());
             return repository.save(user);
         });
+    }
+
+    public void deleteUser(Integer id) {
+        repository.deleteById(id);
     }
 }
