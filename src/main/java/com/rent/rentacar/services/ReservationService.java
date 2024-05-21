@@ -1,5 +1,6 @@
 package com.rent.rentacar.services;
 
+import com.rent.rentacar.exception.ReservationNotFoundException;
 import com.rent.rentacar.models.Reservation;
 import com.rent.rentacar.repositories.ReservationRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,14 +19,19 @@ public class ReservationService {
     }
 
     public Reservation getReservationById(Integer id) {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).orElseThrow(() -> new ReservationNotFoundException(id));
     }
 
     public Reservation createReservation(Reservation reservation) {
         return repository.save(reservation);
     }
 
-    public void deleteReservation(Integer id) {
+    public String deleteReservation(Integer id) {
+        if (!repository.existsById(id)) {
+            throw new ReservationNotFoundException(id);
+        }
         repository.deleteById(id);
+        return "Reservation with id " + id + " has been deleted successfully";
+
     }
 }
