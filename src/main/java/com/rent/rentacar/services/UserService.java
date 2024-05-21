@@ -1,5 +1,6 @@
 package com.rent.rentacar.services;
 
+import com.rent.rentacar.exception.UserNotFoundException;
 import com.rent.rentacar.models.User;
 import com.rent.rentacar.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class UserService {
     }
 
     public User getUserById(Integer id) {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
     }
 
     public User createUser(User user) {
@@ -34,7 +35,7 @@ public class UserService {
             user.setLast_name(userDetails.getLast_name());
             user.setPhone_number(userDetails.getPhone_number());
             return repository.save(user);
-        }).orElse(null);
+        }).orElseThrow(() -> new UserNotFoundException(id));
     }
 
     public void deleteUser(Integer id) {
