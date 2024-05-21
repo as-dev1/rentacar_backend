@@ -20,7 +20,7 @@ public class UserController {
 
     @GetMapping(path = "/{id}")
     public User getUserById(@PathVariable Integer id) {
-        return service.getUserById(id).orElse(null);
+        return service.getUserById(id);
     }
 
     @PostMapping
@@ -30,7 +30,7 @@ public class UserController {
 
     @PutMapping(path = "/{id}")
     public User updateUser(@PathVariable Integer id, @RequestBody User user) {
-        return  service.updateUser(id,user).orElse(null);
+        return  service.updateUser(id,user);
     }
 
     @DeleteMapping(path = "/{id}")
