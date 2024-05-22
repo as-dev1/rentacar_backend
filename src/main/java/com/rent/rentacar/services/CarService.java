@@ -32,6 +32,7 @@ public class CarService {
             car.setModel(carDetails.getModel());
             car.setYear(carDetails.getYear());
             car.setPrice_per_day(carDetails.getPrice_per_day());
+            car.setType(carDetails.getType());
             return repository.save(car);
         }).orElseThrow(() -> new CarNotFoundException(id));
     }

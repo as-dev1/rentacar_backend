@@ -5,6 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+enum CarType {
+    LUXURY,
+    SPORT,
+    ELECTRIC,
+    SUV,
+    CONVERTIBLE
+}
+
 @Entity(name = "car")
 @NoArgsConstructor
 @Getter
@@ -20,6 +28,9 @@ public class Car {
 
     @Column(nullable = false)
     private String model;
+
+    @Enumerated(EnumType.STRING)
+    private CarType type;
 
     @Column(nullable = false)
     private int year;
