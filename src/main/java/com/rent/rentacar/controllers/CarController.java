@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/car")
+@RequestMapping(path = "/api/car")
+@CrossOrigin("http://localhost:5173")
 @RequiredArgsConstructor
 public class CarController {
 

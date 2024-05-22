@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/reservation")
+@RequestMapping(path = "/api/reservation")
+@CrossOrigin("http://localhost:5173")
 @RequiredArgsConstructor
 public class ReservationController {
 
