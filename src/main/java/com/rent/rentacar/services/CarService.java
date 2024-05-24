@@ -30,9 +30,13 @@ public class CarService {
         return repository.findById(id).map(car -> {
             car.setBrand(carDetails.getBrand());
             car.setModel(carDetails.getModel());
-            car.setYear(carDetails.getYear());
-            car.setPrice_per_day(carDetails.getPrice_per_day());
             car.setType(carDetails.getType());
+            car.setYear(carDetails.getYear());
+            car.setNumberOfSeats(carDetails.getNumberOfSeats());
+            car.setHp(carDetails.getHp());
+            car.setDescription(carDetails.getDescription());
+            car.setPricePerDay(carDetails.getPricePerDay());
+            car.setImgPath(carDetails.getImgPath());
             return repository.save(car);
         }).orElseThrow(() -> new CarNotFoundException(id));
     }

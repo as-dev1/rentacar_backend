@@ -1,5 +1,6 @@
 package com.rent.rentacar.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,5 +37,20 @@ public class Car {
     private int year;
 
     @Column(nullable = false)
-    private double price_per_day;
+    @JsonProperty("number_of_seats")
+    private int numberOfSeats;
+
+    @Column(nullable = false)
+    private int hp;
+
+    @Column(columnDefinition = "TEXT", nullable = false)
+    private String description;
+
+    @Column(nullable = false)
+    @JsonProperty("price_per_day")
+    private double pricePerDay;
+
+    @Column(nullable = false)
+    @JsonProperty("img_path")
+    private String imgPath;
 }
