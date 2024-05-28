@@ -1,8 +1,8 @@
-package com.rent.rentacar.services;
+package com.rent.rentacar.service;
 
 import com.rent.rentacar.exception.UserNotFoundException;
-import com.rent.rentacar.models.User;
-import com.rent.rentacar.repositories.UserRepository;
+import com.rent.rentacar.model.User;
+import com.rent.rentacar.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,9 +31,9 @@ public class UserService {
             user.setUsername(userDetails.getUsername());
             user.setPassword(userDetails.getPassword());
             user.setEmail(userDetails.getEmail());
-            user.setFirst_name(userDetails.getFirst_name());
-            user.setLast_name(userDetails.getLast_name());
-            user.setPhone_number(userDetails.getPhone_number());
+            user.setFirstName(userDetails.getFirstName());
+            user.setLastName(userDetails.getLastName());
+            user.setPhoneNumber(userDetails.getPhoneNumber());
             return repository.save(user);
         }).orElseThrow(() -> new UserNotFoundException(id));
     }

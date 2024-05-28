@@ -1,8 +1,8 @@
-package com.rent.rentacar.services;
+package com.rent.rentacar.service;
 
 import com.rent.rentacar.exception.CarNotFoundException;
-import com.rent.rentacar.models.Car;
-import com.rent.rentacar.repositories.CarRepository;
+import com.rent.rentacar.model.Car;
+import com.rent.rentacar.repository.CarRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

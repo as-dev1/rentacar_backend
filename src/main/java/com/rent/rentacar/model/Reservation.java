@@ -1,4 +1,4 @@
-package com.rent.rentacar.models;
+package com.rent.rentacar.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -36,5 +36,5 @@ public class Reservation {
     private LocalDateTime endAt;
 
     @Column(nullable = false)
-    private double total_price;
+    private double totalPrice;
 }

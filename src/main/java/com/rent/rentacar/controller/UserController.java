@@ -1,7 +1,7 @@
-package com.rent.rentacar.controllers;
+package com.rent.rentacar.controller;
 
-import com.rent.rentacar.models.User;
-import com.rent.rentacar.services.UserService;
+import com.rent.rentacar.model.User;
+import com.rent.rentacar.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

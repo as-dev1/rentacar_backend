@@ -1,8 +1,8 @@
-package com.rent.rentacar.services;
+package com.rent.rentacar.service;
 
 import com.rent.rentacar.exception.ReservationNotFoundException;
-import com.rent.rentacar.models.Reservation;
-import com.rent.rentacar.repositories.ReservationRepository;
+import com.rent.rentacar.model.Reservation;
+import com.rent.rentacar.repository.ReservationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

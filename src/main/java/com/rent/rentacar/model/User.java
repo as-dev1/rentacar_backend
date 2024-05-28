@@ -1,4 +1,4 @@
-package com.rent.rentacar.models;
+package com.rent.rentacar.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -25,11 +25,11 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    private String first_name;
+    private String firstName;
 
     @Column(nullable = false)
-    private String last_name;
+    private String lastName;
 
     @Column(nullable = false)
-    private String phone_number;
+    private String phoneNumber;
 }
