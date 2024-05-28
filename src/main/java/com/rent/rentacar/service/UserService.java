@@ -27,16 +27,13 @@ public class UserService {
         return repository.save(user);
     }
 
-    public User updateUser(Integer id, User userDetails) {
-        return repository.findById(id).map(user -> {
-            user.setUsername(userDetails.getUsername());
-            user.setPassword(userDetails.getPassword());
-            user.setEmail(userDetails.getEmail());
-            user.setFirstName(userDetails.getFirstName());
-            user.setLastName(userDetails.getLastName());
-            user.setPhoneNumber(userDetails.getPhoneNumber());
-            return repository.save(user);
-        }).orElseThrow(() -> new UserNotFoundException(id));
+    public User updateUser(Integer id, User user) {
+        if(!repository.existsById(id)) {
+            throw new UserNotFoundException(id);
+        }
+
+        user.setId(id);
+        return repository.save(user);
     }
 
     public String deleteUser(Integer id) {

@@ -27,19 +27,12 @@ public class CarService {
         return repository.save(car);
     }
 
-    public Car updateCar(Integer id, Car carDetails) {
-        return repository.findById(id).map(car -> {
-            car.setBrand(carDetails.getBrand());
-            car.setModel(carDetails.getModel());
-            car.setType(carDetails.getType());
-            car.setYear(carDetails.getYear());
-            car.setNumberOfSeats(carDetails.getNumberOfSeats());
-            car.setHp(carDetails.getHp());
-            car.setDescription(carDetails.getDescription());
-            car.setPricePerDay(carDetails.getPricePerDay());
-            car.setImgPath(carDetails.getImgPath());
-            return repository.save(car);
-        }).orElseThrow(() -> new CarNotFoundException(id));
+    public Car updateCar(Integer id, Car car) {
+        if (!repository.existsById(id)) {
+            throw new CarNotFoundException(id);
+        }
+        car.setId(id);
+        return repository.save(car);
     }
 
     public String deleteCar(Integer id) {
