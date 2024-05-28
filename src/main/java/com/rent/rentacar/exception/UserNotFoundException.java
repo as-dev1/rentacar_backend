@@ -1,6 +1,6 @@
 package com.rent.rentacar.exception;
 
-public class UserNotFoundException extends RuntimeException {
+public class UserNotFoundException extends NotFoundException {
     public UserNotFoundException(Integer id) {
         super("User with id " + id + " not found");
     }

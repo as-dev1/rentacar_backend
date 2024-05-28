@@ -23,6 +23,7 @@ public class ReservationService {
     }
 
     public Reservation createReservation(Reservation reservation) {
+        reservation.setId(null);
         return repository.save(reservation);
     }
 

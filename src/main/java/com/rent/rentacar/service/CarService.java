@@ -23,6 +23,7 @@ public class CarService {
     }
 
     public Car createCar(Car car) {
+        car.setId(null);
         return repository.save(car);
     }
 
