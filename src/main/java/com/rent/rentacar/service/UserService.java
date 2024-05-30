@@ -1,7 +1,7 @@
 package com.rent.rentacar.service;
 
 import com.rent.rentacar.exception.custom.UserNotFoundException;
-import com.rent.rentacar.model.User;
+import com.rent.rentacar.entity.User;
 import com.rent.rentacar.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

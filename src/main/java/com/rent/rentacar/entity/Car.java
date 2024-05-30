@@ -1,18 +1,13 @@
-package com.rent.rentacar.model;
+package com.rent.rentacar.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-enum CarType {
-    LUXURY,
-    SPORT,
-    ELECTRIC,
-    SUV,
-    CONVERTIBLE
-}
+import java.time.LocalDateTime;
 
 @Entity(name = "car")
 @NoArgsConstructor
@@ -53,4 +48,9 @@ public class Car {
     @Column(nullable = false)
     @JsonProperty("img_path")
     private String imgPath;
+
+    private LocalDateTime updatedAt;
+
+    @JsonIgnore
+    private LocalDateTime deletedAt;
 }

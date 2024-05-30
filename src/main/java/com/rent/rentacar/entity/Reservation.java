@@ -1,4 +1,4 @@
-package com.rent.rentacar.model;
+package com.rent.rentacar.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;

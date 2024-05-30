@@ -1,8 +1,10 @@
 package com.rent.rentacar.controller;
 
-import com.rent.rentacar.model.Car;
+import com.rent.rentacar.entity.Car;
+import com.rent.rentacar.model.CarModel;
 import com.rent.rentacar.service.CarService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,12 +33,13 @@ public class CarController {
     }
 
     @PutMapping(path = "/{id}")
-    public Car updateCar(@PathVariable Integer id, @RequestBody Car car) {
+    public Car updateCar(@PathVariable Integer id, @RequestBody CarModel car) {
         return service.updateCar(id, car);
     }
 
     @DeleteMapping(path = "/{id}")
-    public String deleteCar(@PathVariable Integer id) {
-        return service.deleteCar(id);
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    public void deleteCar(@PathVariable Integer id) {
+        service.deleteCar(id);
     }
 }

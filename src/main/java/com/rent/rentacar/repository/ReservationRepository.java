@@ -1,6 +1,6 @@
 package com.rent.rentacar.repository;
 
-import com.rent.rentacar.model.Reservation;
+import com.rent.rentacar.entity.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

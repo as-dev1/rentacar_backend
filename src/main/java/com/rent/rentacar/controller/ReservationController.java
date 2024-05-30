@@ -1,6 +1,6 @@
 package com.rent.rentacar.controller;
 
-import com.rent.rentacar.model.Reservation;
+import com.rent.rentacar.entity.Reservation;
 import com.rent.rentacar.service.ReservationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
