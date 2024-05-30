@@ -1,6 +1,6 @@
 package com.rent.rentacar.service;
 
-import com.rent.rentacar.exception.CarNotFoundException;
+import com.rent.rentacar.exception.custom.CarNotFoundException;
 import com.rent.rentacar.model.Car;
 import com.rent.rentacar.repository.CarRepository;
 import lombok.RequiredArgsConstructor;

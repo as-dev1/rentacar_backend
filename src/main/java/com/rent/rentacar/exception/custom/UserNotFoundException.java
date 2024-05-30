@@ -1,4 +1,4 @@
-package com.rent.rentacar.exception;
+package com.rent.rentacar.exception.custom;
 
 public class UserNotFoundException extends NotFoundException {
     public UserNotFoundException(Integer id) {

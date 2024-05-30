@@ -1,6 +1,6 @@
 package com.rent.rentacar.service;
 
-import com.rent.rentacar.exception.UserNotFoundException;
+import com.rent.rentacar.exception.custom.UserNotFoundException;
 import com.rent.rentacar.model.User;
 import com.rent.rentacar.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

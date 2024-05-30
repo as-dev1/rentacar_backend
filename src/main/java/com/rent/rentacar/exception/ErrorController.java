@@ -1,5 +1,6 @@
 package com.rent.rentacar.exception;
 
+import com.rent.rentacar.exception.custom.NotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

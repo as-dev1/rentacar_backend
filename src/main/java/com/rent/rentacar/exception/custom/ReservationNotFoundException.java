@@ -1,4 +1,4 @@
-package com.rent.rentacar.exception;
+package com.rent.rentacar.exception.custom;
 
 public class ReservationNotFoundException extends NotFoundException{
     public ReservationNotFoundException(Integer id){
