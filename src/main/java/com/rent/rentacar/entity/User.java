@@ -1,9 +1,12 @@
 package com.rent.rentacar.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Entity(name = "user")
 @NoArgsConstructor
@@ -32,4 +35,9 @@ public class User {
 
     @Column(nullable = false)
     private String phoneNumber;
+
+    private LocalDateTime updatedAt;
+
+    @JsonIgnore
+    private LocalDateTime deletedAt;
 }
