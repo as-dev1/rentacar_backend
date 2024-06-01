@@ -26,6 +26,11 @@ public class ReservationController {
         return service.getReservationById(id);
     }
 
+    @GetMapping("/car/{carId}")
+    public List<Reservation> getReservationsByCarId(@PathVariable Integer carId) {
+        return service.getReservationsByCarId(carId);
+    }
+
     @PostMapping
     public Reservation createReservation(@RequestBody Reservation reservation) {
         return service.createReservation(reservation);

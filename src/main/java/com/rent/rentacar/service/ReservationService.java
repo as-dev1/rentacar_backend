@@ -1,7 +1,7 @@
 package com.rent.rentacar.service;
 
-import com.rent.rentacar.exception.custom.ReservationNotFoundException;
 import com.rent.rentacar.entity.Reservation;
+import com.rent.rentacar.exception.custom.ReservationNotFoundException;
 import com.rent.rentacar.repository.ReservationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,6 +21,10 @@ public class ReservationService {
 
     public Reservation getReservationById(Integer id) {
         return repository.findByIdAndDeletedAtIsNull(id).orElseThrow(() -> new ReservationNotFoundException(id));
+    }
+
+    public List<Reservation> getReservationsByCarId(Integer carId) {
+        return repository.findByCarIdAndDeletedAtIsNull(carId);
     }
 
     public Reservation createReservation(Reservation reservation) {
