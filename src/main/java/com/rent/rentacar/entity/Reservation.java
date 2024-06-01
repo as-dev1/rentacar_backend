@@ -36,9 +36,6 @@ public class Reservation {
     @JsonProperty("end_at")
     private LocalDateTime endAt;
 
-    @Column(nullable = false)
-    private double totalPrice;
-
     @JsonIgnore
     private LocalDateTime deletedAt;
 }

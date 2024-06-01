@@ -1,6 +1,7 @@
 package com.rent.rentacar.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,12 +29,15 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+    @JsonProperty("first_name")
     private String firstName;
 
     @Column(nullable = false)
+    @JsonProperty("last_name")
     private String lastName;
 
     @Column(nullable = false)
+    @JsonProperty("phone_name")
     private String phoneNumber;
 
     private LocalDateTime updatedAt;
