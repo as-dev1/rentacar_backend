@@ -26,6 +26,11 @@ public class ReviewController {
         return service.getReviewById(id);
     }
 
+    @GetMapping("/car/{carId}")
+    public List<Review> getReviewsByCarId(@PathVariable Integer carId) {
+        return service.getReviewsByCarId(carId);
+    }
+
     @PostMapping
     public Review createReview(@RequestBody Review review) {
         return service.createReview(review);

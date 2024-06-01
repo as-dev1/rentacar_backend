@@ -12,4 +12,6 @@ public interface ReviewRepository extends JpaRepository<Review, Integer> {
     List<Review> findAllByDeletedAtIsNull();
 
     Optional<Review> findByIdAndDeletedAtIsNull(Integer id);
+
+    List<Review> findByCarIdAndDeletedAtIsNull(Integer carId);
 }

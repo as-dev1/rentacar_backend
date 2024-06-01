@@ -23,6 +23,10 @@ public class ReviewService {
         return repository.findByIdAndDeletedAtIsNull(id).orElseThrow(() -> new ReviewNotFoundException(id));
     }
 
+    public List<Review> getReviewsByCarId(Integer carId) {
+        return repository.findByCarIdAndDeletedAtIsNull(carId);
+    }
+
     public Review createReview(Review review) {
         review.setId(null);
         return repository.save(review);
