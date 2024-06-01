@@ -6,6 +6,7 @@ import com.rent.rentacar.repository.ReservationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -15,11 +16,11 @@ public class ReservationService {
     private final ReservationRepository repository;
 
     public List<Reservation> getAllReservations() {
-        return repository.findAll();
+        return repository.findAllByDeletedAtIsNull();
     }
 
     public Reservation getReservationById(Integer id) {
-        return repository.findById(id).orElseThrow(() -> new ReservationNotFoundException(id));
+        return repository.findByIdAndDeletedAtIsNull(id).orElseThrow(() -> new ReservationNotFoundException(id));
     }
 
     public Reservation createReservation(Reservation reservation) {
@@ -27,12 +28,9 @@ public class ReservationService {
         return repository.save(reservation);
     }
 
-    public String deleteReservation(Integer id) {
-        if (!repository.existsById(id)) {
-            throw new ReservationNotFoundException(id);
-        }
-        repository.deleteById(id);
-        return "Reservation with id " + id + " has been deleted successfully";
-
+    public void deleteReservation(Integer id) {
+        Reservation reservation = repository.findByIdAndDeletedAtIsNull(id).orElseThrow(() -> new ReservationNotFoundException(id));
+        reservation.setDeletedAt(LocalDateTime.now());
+        repository.save(reservation);
     }
 }

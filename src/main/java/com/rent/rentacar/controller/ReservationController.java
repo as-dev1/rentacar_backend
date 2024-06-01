@@ -3,6 +3,7 @@ package com.rent.rentacar.controller;
 import com.rent.rentacar.entity.Reservation;
 import com.rent.rentacar.service.ReservationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,7 +32,8 @@ public class ReservationController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public String deleteReservation(@PathVariable Integer id) {
-        return service.deleteReservation(id);
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    public void deleteReservation(@PathVariable Integer id) {
+        service.deleteReservation(id);
     }
 }

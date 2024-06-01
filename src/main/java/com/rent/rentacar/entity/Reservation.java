@@ -1,5 +1,6 @@
 package com.rent.rentacar.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -37,4 +38,7 @@ public class Reservation {
 
     @Column(nullable = false)
     private double totalPrice;
+
+    @JsonIgnore
+    private LocalDateTime deletedAt;
 }
