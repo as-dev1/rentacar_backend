@@ -37,7 +37,7 @@ public class User {
     private String lastName;
 
     @Column(nullable = false)
-    @JsonProperty("phone_name")
+    @JsonProperty("phone_number")
     private String phoneNumber;
 
     private LocalDateTime updatedAt;

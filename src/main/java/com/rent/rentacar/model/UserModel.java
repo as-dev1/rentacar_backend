@@ -19,6 +19,6 @@ public class UserModel {
     @JsonProperty("last_name")
     private String lastName;
 
-    @JsonProperty("phone_name")
+    @JsonProperty("phone_number")
     private String phoneNumber;
 }
