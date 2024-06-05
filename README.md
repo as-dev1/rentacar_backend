@@ -13,7 +13,7 @@ This is a Spring Boot backend application. The application provides APIs for man
 
 ### Prerequisites
 
-- Java 11 or higher
+- Java 21
 - A relational database (MariaDB / MySQL for production or H2 for in-memory)
 
 ### Installation
